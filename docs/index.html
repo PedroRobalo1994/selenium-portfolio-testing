@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Testing Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header data-test="dashboard-header">
+        <h1 data-test="dashboard-title">Portfolio Testing Dashboard</h1>
+        <p data-test="dashboard-subtitle">Automated testing results for Pedro Robalo's Portfolio</p>
+    </header>
+
+    <main data-test="dashboard-main">
+        <section class="metrics-grid" data-test="metrics-section">
+            <div class="metric-card" data-test="total-tests-card">
+                <h3 data-test="total-tests-label">Total Tests</h3>
+                <span class="metric-value" id="totalTests" data-test="total-tests-value">0</span>
+            </div>
+            <div class="metric-card" data-test="passed-tests-card">
+                <h3 data-test="passed-tests-label">Passed</h3>
+                <span class="metric-value success" id="passedTests" data-test="passed-tests-value">0</span>
+            </div>
+            <div class="metric-card" data-test="failed-tests-card">
+                <h3 data-test="failed-tests-label">Failed</h3>
+                <span class="metric-value error" id="failedTests" data-test="failed-tests-value">0</span>
+            </div>
+            <div class="metric-card" data-test="success-rate-card">
+                <h3 data-test="success-rate-label">Success Rate</h3>
+                <span class="metric-value" id="successRate" data-test="success-rate-value">0%</span>
+            </div>
+        </section>
+
+        <section class="charts-section" data-test="charts-section">
+            <div class="chart-container" data-test="test-results-chart-container">
+                <h3 data-test="test-results-chart-title">Test Results Over Time</h3>
+                <canvas id="testResultsChart" data-test="test-results-chart"></canvas>
+            </div>
+            <div class="chart-container" data-test="browser-compatibility-chart-container">
+                <h3 data-test="browser-compatibility-chart-title">Browser Compatibility</h3>
+                <canvas id="browserChart" data-test="browser-compatibility-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="test-results-section" data-test="test-results-section">
+            <h3 data-test="test-results-table-title">Latest Test Results</h3>
+            <div class="test-results-table" data-test="test-results-table-container">
+                <table data-test="test-results-table">
+                    <thead data-test="test-results-table-header">
+                        <tr data-test="test-results-header-row">
+                            <th data-test="test-suite-header">Test Suite</th>
+                            <th data-test="status-header">Status</th>
+                            <th data-test="duration-header">Duration</th>
+                            <th data-test="last-run-header">Last Run</th>
+                            <th data-test="actions-header">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="testResultsBody" data-test="test-results-table-body">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="links-section" data-test="links-section">
+            <a href="https://github.com/PedroRobalo1994/portfolio-testing" 
+               class="btn btn-primary" 
+               target="_blank"
+               data-test="github-repository-link">View on GitHub</a>
+            <a href="https://pedrorobalo1994.github.io/vanila-portfolio" 
+               class="btn btn-secondary" 
+               target="_blank"
+               data-test="portfolio-website-link">View Portfolio</a>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
